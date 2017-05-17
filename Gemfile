@@ -25,7 +25,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.3.0'
 
 # Semantic-UI
 gem 'semantic-ui-sass', '~> 0.11.0.0'
@@ -51,4 +51,5 @@ end
 
 group :development, :test do
     gem 'factory_girl_rails', '~> 4.3.0'
+    gem 'pry-rails'
 end
