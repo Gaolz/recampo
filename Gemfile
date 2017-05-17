@@ -46,6 +46,7 @@ group :development do
     # Livereload
     gem 'guard-livereload', require: false
     gem 'rack-livereload'
+    gem 'quiet_assets'
 end
 
 group :development, :test do

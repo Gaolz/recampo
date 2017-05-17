@@ -110,6 +110,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.5)
     rack-livereload (0.3.15)
       rack
@@ -194,6 +196,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   pg
+  quiet_assets
   rack-livereload
   rails
   sass-rails
