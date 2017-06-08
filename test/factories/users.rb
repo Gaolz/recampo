@@ -6,5 +6,6 @@ FactoryGirl.define do
     name "name"
     sequence(:email) { |n| "user#{n}@example.com" }
     bio "bio"
+    password "12345678"
   end
 end

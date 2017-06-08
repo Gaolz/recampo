@@ -6,4 +6,7 @@ class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
 
   include FactoryGirl::Syntax::Methods
+
+  attr_reader :controller
+  delegate :current_user, :logined?, :login_as, :logout, to: :controller
 end
