@@ -13,4 +13,9 @@ class SessionsControllerTest < ActionController::TestCase
     assert logined?
   end
 
+  test "should destroy session" do
+    login_as create(:user)
+    delete :destroy
+    assert !logined?
+  end
 end
