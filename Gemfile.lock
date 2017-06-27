@@ -152,6 +152,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     ruby_dep (1.5.0)
     sass (3.4.23)
     sass-rails (5.0.6)
@@ -206,6 +207,7 @@ DEPENDENCIES
   quiet_assets
   rack-livereload
   rails
+  redcarpet (~> 3.0.0)
   sass-rails
   sdoc
   semantic-ui-sass (~> 0.11.0.0)
