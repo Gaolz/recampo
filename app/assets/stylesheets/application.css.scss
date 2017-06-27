@@ -10,11 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require semantic-ui
  *= require_self
+ *= require_tree .
  */
-
- @import "semantic-ui";
 
  body {
      margin: 0;
@@ -30,4 +29,20 @@
 
  .main.menu {
      border-radius: 0;
+ }
+
+ /* link */
+ a {
+     color: #009FDA;
+     text-decoration: none;
+ }
+
+ a:hover {
+     color: #00BAFF;
+ }
+
+ /* form */
+ .ui.form textarea.large {
+     height: 25em;
+     max-height: 50em;
  }
