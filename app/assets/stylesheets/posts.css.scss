@@ -1,0 +1,13 @@
+.ui.comments.posts .comment .content {
+    max-width: 640px;
+}
+
+.ui.form.post {
+    .field {
+        clear: none;
+    }
+
+    textarea {
+        max-height: none;
+    }
+}
