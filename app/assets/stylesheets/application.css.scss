@@ -1,59 +1,16 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require semantic-ui
- *= require_self
- *= require_tree .
- */
+$font-size-base: 15px;
+$nav-link-hover-bg: transparent;
 
- html {
-     font-size: 15px;
- }
+@import "bootstrap";
+@import "highlight";
+@import "campo";
+@import "topics";
+@import "posts";
 
  body {
-     margin: 0;
-     padding: 0;
      background: #f9f9f9;
-     color: #333;
-     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
  }
 
  .container {
      max-width: 960px;
-     magin: 0 auto;
- }
-
- .main.container {
-     margin-bottom: 1rem;
- }
-
- .main.menu {
-     border-radius: 0;
- }
-
- /* link */
- a {
-     color: #009FDA;
-     text-decoration: none;
- }
-
- a:hover {
-     color: #00BAFF;
- }
-
- a.quiet {
-     color: rgba(0, 0, 0, 0.3);
- }
-
- a.quiet:hover {
-     color: rgba(0, 0, 0, 0.6);
  }
