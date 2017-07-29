@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
 
   def login_from_cookies
     if cookies[:remember_token].present?
-      if user = User.find_by(remember_token: cookies[:remember_token])
+      if user = User.find_by_remember_token(cookies[:remember_token])
         session[:user_id] = user.id
         user
       else
