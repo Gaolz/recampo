@@ -16,12 +16,12 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
-    @topic.posts.build
+    @topic.build_main_post
   end
 
   def create
     @topic = Topic.new topic_params.merge(user: current_user)
-    @topic.posts.first.user = current_user
+    @topic.main_post.user = current_user
     if @topic.save
       redirect_to @topic
     else
@@ -31,18 +31,16 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = current_user.topics.find params[:id]
-
-    respond_to do |format|
-      format.js
-    end
   end
 
   def update
     @topic = current_user.topics.find params[:id]
-    @topic.update_attributes params.require(:topic).permit(:title)
-
-    respond_to do |format|
-      format.js
+    @topic.title = topic_params[:title]
+    @topic.main_post.content = topic_params[:main_post_attributes][:content]
+    if @topic.save
+      redirect_to @topic
+    else
+      render :edit
     end
   end
 

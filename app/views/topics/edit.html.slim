@@ -3,12 +3,14 @@
         ol.breadcrumb
             li
                 a href=topics_path Topics
+            li
+                a href=topic_path(@topic) = @topic.title
             li.active
-                | New
+                | Edit
     .panel-body
         = form_for @topic, html: { class: 'form-topic' } do |f|
             .form-group
-                = f.text_field :title, class: 'form-control', placeholder: 'Title', tabindex: 1
+                = f.text-field :title, class: 'form-control', placeholder: 'Title', tabindex: 1
             .form-group
                 .campo-editor
                     ul.nav.nav-tabs
@@ -22,5 +24,7 @@
                         .tab-pane.active id="write_topic_#{@topic.try(:id) || 'new'}"
                             = f.fields_for :main_post do |builder|
                                 = builder.text_area :content, class: 'form-control', placeholder: 'Type here...', tabindex: 2
-                        .ta-pane.preview id="preview_topic_#{@topic.try(:id) || 'new'}"
-            = f.submit 'Post', class: 'btn btn-success', tabindex: 3
+                        .tab-pane.preview id="preview_topic_#{@topic.try(:id) || 'new'}"
+            = f.submit 'Save Changes', class: 'btn btn-success', tabindex: 3
+            '
+            a.btn.btn-default href=topic_path(@topic) Cancel
