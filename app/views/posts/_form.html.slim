@@ -1,4 +1,4 @@
-article.post id=(post.new_record? ? 'post_new' : "post_#{post.id}")
+.post id=(post.new_record? ? 'post_new' : "post_#{post.id}")
     = form_for [post.topic, post], html: { class: 'form-post' }, remote: true do |f|
         .form-group
             .campo-editor

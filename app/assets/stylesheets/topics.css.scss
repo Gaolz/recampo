@@ -1,55 +1,46 @@
-.topics {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.topic {
+    margin: -15px;
 
-    li {
-        border-bottom: 1px solid #ddd;
+    &:hover {
+        background: #f9f9f9;
+    }
+
+    a {
+        display: block;
+        padding: 15px;
+        color: #333;
         @include clearfix();
 
-        a {
-            display: block;
-            padding: 15px 0;
-            color: #333;
-            @include clearfix();
-
-            &:hover {
-                text-decoration: none;
-            }
+        &:hover {
+            text-decoration: none;
         }
+    }
 
-        .avatar {
-            width: 48px;
-            height: 48px;
-            float: left;
+    .icon {
+        float: left;
+        color: #999;
+        line-height: inherit;
+    }
 
-            img {
-                width: 48px;
-                height: 48px;
-            }
-        }
+    .content {
+        margin-left: 24px;
+    }
 
-        .content {
-            margin-left: 48px;
-            padding: 2px 0 2px 15px;
-        }
+    .title {
+        margin: 0;
+        font-size: 1em;
+        font-weight: bold;
+        line-height: inherit;
+    }
 
-        .title {
-            margin: 0;
-            font-size: 1em;
-            font-weight: bold;
-            display: inline;
-        }
-
-        .date {
+    .date {
             float: right;
+            font-weight: normal;
             color: #999;
-        }
+    }
 
-        .extra {
-            margin-top: 2px;
-            color: #999;
-        }
+    .extra {
+        color: #999;
     }
 }
 
