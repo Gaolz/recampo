@@ -42,6 +42,11 @@
     }
 }
 
+.form-post textarea {
+    height: 8em;
+    resize: vertical;
+}
+
 .form-post {
     textarea {
         height: 8em;
