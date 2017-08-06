@@ -29,10 +29,11 @@ ActiveRecord::Schema.define(version: 20170805153639) do
   add_index "post_votes", ["user_id"], name: "index_post_votes_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "post_number"
     t.integer  "topic_id"
     t.integer  "user_id"
+    t.text     "content"
+    t.integer  "post_number"
+    t.integer  "votes", default: 0
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -41,8 +42,8 @@ ActiveRecord::Schema.define(version: 20170805153639) do
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
-    t.string   "title"
     t.integer  "user_id"
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
