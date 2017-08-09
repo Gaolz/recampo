@@ -1,6 +1,5 @@
-li.list-group-item.list-group-item-campo id="post_#{post.id}"
-    .post
-        img.avatar.img-rounded src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?r=G&s=48"
+li.list-group-item.list-group-item-campo.post id="post_#{post.id}" data-id=post.id
+    img.avatar.img-rounded src="http://gravatar.com/avatar/5aec84cd0b5479a0d1d89b6ffa2a9a20.png?r=G&s=48"
         .metadata
             span.post-number
                 | #
@@ -13,15 +12,19 @@ li.list-group-item.list-group-item-campo id="post_#{post.id}"
             = format_post post.content
         - if logined?
             .actions.clearfix
-                .pull-right
-                    - if current_user == post.user
+                - if current_user == post.user
+                    .pull-left
                         - if post.post_number == 1
-                            a.btn href=edit_topic_post_path(post.topic)
+                            a.btn href=edit_topic_path(post.topic)
                                 span.glyphicon.glyphicon-edit
-                                '
-                                | Edit
                         - else
                             a.btn href=edit_post_path(post) data-remote='true'
                                 span.glyphicon.glyphicon-edit
-                                '
-                                | Edit
+                    .pull-right
+                        span.votes
+                            - if post.votes != 0
+                                = post.votes
+                        a.btn data-vote="up"
+                            span.glyphicon.glyphicon-thumbs-up
+                        a.btn data-vote="down"
+                            span.glyphicon.glyphicon-thumbs-down
