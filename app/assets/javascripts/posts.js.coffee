@@ -17,7 +17,7 @@ campo.Posts =
             post = action.closest('[data-post-id]')
             id = post.data('post-id')
             action_type = action.data('post-vote-action')
-            type = if post.attr('data-post-voted') if action_type then 'cancel' else action_type
+            type = if post.attr('data-post-voted') is action_type then 'cancel' else action_type
 
             $.ajax
                 url: "/posts/#{id}/vote"
