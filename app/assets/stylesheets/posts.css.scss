@@ -50,14 +50,6 @@
             margin-right: -12px;
         }
 
-        .btn[data-vote="up"][data-voted] {
-            color: $btn-success-bg;
-        }
-
-        .btn[data-vote="down"][data-voted] {
-            color: $btn-danger-bg;
-        }
-
         .votes {
             padding: 6px 12px;
             display: inline-block;
@@ -72,6 +64,14 @@
                 color: $btn-danger-bg;
             }
         }
+    }
+
+    .btn[data-vote="up"][data-voted] {
+        color: $btn-success-bg;
+    }
+
+    .btn[data-vote="down"][data-voted] {
+        color: $btn-danger-bg;
     }
 }
 
