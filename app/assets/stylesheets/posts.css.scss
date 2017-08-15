@@ -66,11 +66,11 @@
         }
     }
 
-    .btn[data-vote="up"][data-voted] {
+    .btn[data-voted="up"][data-voted] {
         color: $btn-success-bg;
     }
 
-    .btn[data-vote="down"][data-voted] {
+    .btn[data-voted="down"][data-voted] {
         color: $btn-danger-bg;
     }
 }
