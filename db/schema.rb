@@ -33,17 +33,18 @@ ActiveRecord::Schema.define(version: 20170805153639) do
     t.integer  "user_id"
     t.text     "content"
     t.integer  "post_number"
-    t.integer  "votes", default: 0
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "votes_up",    default: 0
+    t.integer  "votes_down",  default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "title"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
